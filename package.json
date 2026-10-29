@@ -1,5 +1,5 @@
 {
-  "name": "pi-openrouter-balance",
+  "name": "@ymy88/pi-openrouter-balance",
   "version": "0.1.0",
   "description": "pi extension: show the OpenRouter account balance in the status bar, only while the current model runs on OpenRouter",
   "keywords": [
@@ -29,7 +29,8 @@
   },
   "type": "module",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "files": [
     "index.ts",

@@ -39,7 +39,7 @@
 ## 安装
 
 ```bash
-pi install npm:pi-openrouter-balance
+pi install npm:@ymy88/pi-openrouter-balance
 ```
 
 也可以直接装 git 版本，或者装本地目录：
