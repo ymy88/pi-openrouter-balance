@@ -1,0 +1,50 @@
+{
+  "name": "pi-openrouter-balance",
+  "version": "0.1.0",
+  "description": "pi extension: show the OpenRouter account balance in the status bar, only while the current model runs on OpenRouter",
+  "keywords": [
+    "pi",
+    "pi-extension",
+    "pi-package",
+    "coding-agent",
+    "status-bar",
+    "balance",
+    "openrouter",
+    "credits",
+    "cost",
+    "deepseek-auto"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "ymy88",
+    "url": "https://github.com/ymy88"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ymy88/pi-openrouter-balance.git"
+  },
+  "homepage": "https://github.com/ymy88/pi-openrouter-balance#readme",
+  "bugs": {
+    "url": "https://github.com/ymy88/pi-openrouter-balance/issues"
+  },
+  "type": "module",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "index.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types test/format.test.ts"
+  }
+}
