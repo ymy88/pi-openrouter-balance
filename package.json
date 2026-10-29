@@ -1,6 +1,6 @@
 {
   "name": "@ymy88/pi-openrouter-balance",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "pi extension: show the OpenRouter account balance in the status bar, only while the current model runs on OpenRouter",
   "keywords": [
     "pi",
