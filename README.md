@@ -34,7 +34,7 @@ Remaining credit = `total_credits - total_usage`.
 | Remaining < threshold (5 USD by default) | Yellow |
 | Otherwise | Normal |
 
-When the query fails, the status reads a dim `💵 OR 登录✗` / `💵 OR 无密钥` / `💵 OR ✗`. A 401 or 403 clears the cache so a stale number is never shown.
+When the query fails, the status reads a dim `💵 OR login ✗` / `💵 OR no key` / `💵 OR ✗`. A 401 or 403 clears the cache so a stale number is never shown.
 
 ## Install
 

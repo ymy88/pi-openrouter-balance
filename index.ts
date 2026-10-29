@@ -62,7 +62,7 @@ export function renderBalance(fg: (role: string, text: string) => string, b: Bal
 
 /** /openrouter-balance 的详情。 */
 export function formatDetails(b: Balance): string {
-	return `OpenRouter 余额：$${b.remaining.toFixed(2)}（总额 $${b.total.toFixed(2)}，已用 $${b.used.toFixed(2)}）`;
+	return `OpenRouter balance: $${b.remaining.toFixed(2)} (total $${b.total.toFixed(2)}, used $${b.used.toFixed(2)})`;
 }
 
 /** 取 URL 的主机名，解析失败返回 undefined。 */
@@ -185,7 +185,7 @@ export default function openrouterBalance(pi: ExtensionAPI) {
 		}
 		if (!cache) {
 			const text =
-				failure === "auth" ? `💵 ${LABEL} 登录✗` : failure === "no-key" ? `💵 ${LABEL} 无密钥` : `💵 ${LABEL} ✗`;
+				failure === "auth" ? `💵 ${LABEL} login ✗` : failure === "no-key" ? `💵 ${LABEL} no key` : `💵 ${LABEL} ✗`;
 			setStatus(STATUS_KEY, fg("dim", text));
 			return;
 		}
@@ -213,21 +213,21 @@ export default function openrouterBalance(pi: ExtensionAPI) {
 	});
 
 	pi.registerCommand(COMMAND, {
-		description: "显示 OpenRouter 余额并强制刷新",
+		description: "Show the OpenRouter balance and refresh it now",
 		handler: async (_args, ctx) => {
 			lastCtx = ctx;
 			if (!provider(ctx)) {
-				ctx?.ui?.notify?.(`当前模型不在 OpenRouter 上，没有可显示的 ${LABEL} 余额`, "info");
+				ctx?.ui?.notify?.(`The current model does not run on OpenRouter, so there is no ${LABEL} balance to show`, "info");
 				return;
 			}
 			const balance = await fetchBalance(ctx);
 			if (!balance) {
 				const hint =
 					failure === "auth"
-						? "OpenRouter 密钥无效，请用 /login 重新登录 openrouter"
+						? "The OpenRouter key is invalid. Run /login openrouter to sign in again."
 						: failure === "no-key"
-							? "没有找到 openrouter 的密钥，请用 /login 登录"
-							: "查询 OpenRouter 余额失败，请检查网络后重试";
+							? "No openrouter key found. Run /login openrouter to sign in."
+							: "Could not read the OpenRouter balance. Check the network and try again.";
 				ctx?.ui?.notify?.(hint, "error");
 				return;
 			}
